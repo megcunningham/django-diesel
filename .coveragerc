@@ -1,0 +1,3 @@
+[run]
+include = megs_project/*
+omit = *migrations*
