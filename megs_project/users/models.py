@@ -20,3 +20,42 @@ class User(AbstractUser):
 
     def get_absolute_url(self):
         return reverse('users:detail', kwargs={'username': self.username})
+        
+        
+# Workout Models     
+        
+class MuscleGroup(models.Model):
+    name = models.CharField(max_length=20)
+    
+    def __str__(self):
+    return self
+
+class Workouts(models.Model):
+    group_name = models.ForeignKey(MuscleGroup)
+    collection = models.ForeignKey(Exercise.name)
+    
+    def __str__(self):
+        return self
+    
+class Exercise(models.Model):
+     name = models.CharField(max_length=25)
+     sets = models.ForeignKey(Set)
+    
+    def __str__(self):
+        return self.name
+                
+class Set(models.model):
+    set_number = models.CharField(max_length=2)
+    weight = models.Charfield(max_length=40)
+    reps = models.CharField(max_length=20)
+    notes = models.CharField(max_length=200)
+    
+    def __str__(self):
+        return self
+        
+
+        
+
+    
+
+
