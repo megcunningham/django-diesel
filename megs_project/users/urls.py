@@ -33,4 +33,9 @@ urlpatterns = [
         view=views.UserUpdateView.as_view(),
         name='update'
     ),
+    
+    url(
+        r'^admin/', AdminSite
+    ),
+    
 ]
